@@ -1,0 +1,9 @@
+[package]
+name = "deb-architectures"
+version = "0.1.0"
+authors = ["Michael Aaron Murphy <mmstickman@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+
+[dependencies]
