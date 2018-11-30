@@ -39,7 +39,7 @@ impl FromStr for Architecture {
             "s390x" => Architecture::S390X,
             "linux-any" => Architecture::LinuxAny,
             "x32" => Architecture::X32,
-            _ => return Err("invalid architecture")
+            _ => return Err("invalid architecture"),
         };
 
         Ok(arch)
@@ -72,11 +72,12 @@ pub fn supported_architectures() -> io::Result<Vec<Architecture>> {
     fs::read_to_string("/var/lib/dpkg/arch")?
         .lines()
         .map(|arch| {
-            arch.parse::<Architecture>()
-                .map_err(|why| io::Error::new(
+            arch.parse::<Architecture>().map_err(|why| {
+                io::Error::new(
                     io::ErrorKind::InvalidData,
-                    format!("supported_architectures: {}: {}", why, arch)
-                ))
+                    format!("supported_architectures: {}: {}", why, arch),
+                )
+            })
         })
         .collect()
 }

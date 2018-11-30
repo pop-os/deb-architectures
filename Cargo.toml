@@ -1,9 +1,10 @@
 [package]
 name = "deb-architectures"
+repository = "https://github.com/pop-os/deb-architectures"
 version = "0.1.0"
 authors = ["Michael Aaron Murphy <mmstickman@gmail.com>"]
+description = "Parse Debian architecture strings into an enum, and vice versa."
 license = "MIT"
 readme = "README.md"
-
 
 [dependencies]
